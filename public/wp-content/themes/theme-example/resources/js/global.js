@@ -1,0 +1,5 @@
+/**
+ * Global scripts.
+ */
+
+import './example';

@@ -1,0 +1,51 @@
+{
+  "name" : "michaelbragg/wp-webpack-config",
+  "image": "mcr.microsoft.com/devcontainers/base:bullseye",
+  "features": {
+      "ghcr.io/devcontainers/features/common-utils:2.4.2": {
+          "installZsh"     : "true",
+          "username"       : "vscode",
+          "uid"            : "1000",
+          "gid"            : "1000",
+          "upgradePackages": "true"
+      },
+      "ghcr.io/devcontainers/features/github-cli:1.0.11" : {},
+      "ghcr.io/devcontainers/features/docker-in-docker:2.10.1": {
+          "version": "latest",
+          "enableNonRootDocker": "true",
+          "moby": "true"
+      },
+      "ghcr.io/devcontainers/features/git:1.2.0": {
+          "version": "latest",
+          "ppa"    : "false"
+      },
+      "ghcr.io/devcontainers/features/node:1.4.0": {
+          "version": "20"
+      }
+  },
+  "overrideFeatureInstallOrder": [
+      "ghcr.io/devcontainers/features/common-utils"
+  ],
+"customizations": {
+    "vscode": {
+        "extensions": [
+            "ms-azuretools.vscode-docker",
+            "ms-vscode-remote.vscode-remote-extensionpack",
+            "ms-vscode.remote-explorer",
+        ],
+      "settings": {
+          "files.exclude": {
+              ".npm": true
+          },
+        "files.watcherExclude": {
+            "**/.git"        : true,
+            "**/.npm": true,
+            "**/node_modules": true
+        },
+        "git.ignoreLimitWarning": true
+      }
+    }
+  },
+  "forwardPorts" : [],
+  "remoteUser": "vscode"
+}
